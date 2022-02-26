@@ -26,7 +26,7 @@ export class Teacher extends Person {
 export interface IPerson {
   _name: String;
   display(): void;
-  find(name: String): IPerson;
+  find(name: String): String;
 }
 
 export class Student implements IPerson {
@@ -35,7 +35,7 @@ export class Student implements IPerson {
   display(): void {
     throw new Error('Method not implemented.');
   }
-  find(name: String): IPerson {
+  find(name: String): String {
     throw new Error('Method not implemented.');
   }
 }
@@ -46,7 +46,7 @@ export class Staff implements IPerson {
   display(): void {
     throw new Error('Method not implemented.');
   }
-  find(name: String): Person {
+  find(name: String): String {
     throw new Error('Method not implemented.');
   }
 }

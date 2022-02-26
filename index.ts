@@ -15,20 +15,32 @@ import { IPerson } from './Person';
 // let triangleobj = new Triangle(line1, line2, line3);
 // console.log(triangleobj);
 
-class Staff {
+class Staff implements IPerson {
   _name: String;
   _employeeId: String;
   display(): void {
-    throw new Error('Method not implemented.');
+    console.log('display(1)');
+    // throw new Error('Method not implemented.');
   }
-  find(name: String): IPerson {
-    throw new Error('Method not implemented.');
+  find(name: String): String {
+    console.log('find');
+    // throw new Error('Method not implemented.');
+    return 'Return 1';
   }
 }
 
-let objStaff = new Staff();
+class StaffExtension extends Staff {
+  display(): void {
+    console.log('display(2)');
+  }
+}
+
+let objStaff = new StaffExtension();
 objStaff.display();
+
 console.log(objStaff);
+let result = objStaff.find('test');
+console.log(result);
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
